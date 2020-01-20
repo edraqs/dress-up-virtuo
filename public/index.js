@@ -8,9 +8,9 @@
     const template = actors.map(actor => {
       return `
         <div class="actor">
-          <span>${actor.who}</span>
-          <span>${actor.type}</span>
-          <span>${actor.amount}</span>
+          <label>${actor.who}</label>
+          <label>${actor.type}</label>
+          <label>${actor.amount}</label>
         </div>
       `;
     }).join('');
@@ -25,10 +25,10 @@
 
   button.addEventListener('click', function onClick () {
     const car = VIRTUO.getCar();
-    const begin = document.querySelector('#rental .js-begin').value;
-    const end = document.querySelector('#rental .js-end').value;
-    const distance = document.querySelector('#rental .js-distance').value;
-    const option = document.querySelector('#rental .js-option').checked;
+    const begin = document.querySelector('#form .js-begin').value;
+    const end = document.querySelector('#form .js-end').value;
+    const distance = document.querySelector('#form .js-distance').value;
+    const option = document.querySelector('#form .js-option').checked;
     const actors = VIRTUO.payActors(car, begin, end, distance, option);
 
     render(actors);
